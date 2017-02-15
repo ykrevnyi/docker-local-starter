@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+
+  app:
+    build: .
+    volumes:
+      - ./:/home/app/some-useless-startup
+      - /home/app/some-useless-startup/node_modules
+    ports:
+      - 8000:8000
