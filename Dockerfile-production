@@ -16,11 +16,15 @@ WORKDIR /$BASE_DIR/$USER/$APP_NAME
 # Copy package.json file
 COPY package.json /$BASE_DIR/$USER/$APP_NAME/package.json
 
+# Install deps
+RUN npm install -q
+
+# Copy rest of the files
+COPY . /$BASE_DIR/$USER/$APP_NAME/
+
 # Set permissions for given user
 RUN chmod +x /$BASE_DIR/$USER && \
     chown -R $USER:$USER /$BASE_DIR/$USER
 
 USER $USER
-RUN npm install -q
-
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]

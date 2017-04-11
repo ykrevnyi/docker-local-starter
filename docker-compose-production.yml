@@ -1,0 +1,10 @@
+
+version: '2.0'
+services:
+
+  app-production:
+    build:
+      context: .
+      dockerfile: Dockerfile-production
+    ports:
+      - 8000
