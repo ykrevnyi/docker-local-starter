@@ -4,7 +4,7 @@ let express = require('express');
 const app = express();
 
 app.get('/', function(req, res) {
-  res.send('home, sweet home 3');
+  res.send('home, sweet home');
 });
 
-app.listen(8000);
+app.listen(process.env.PORT);

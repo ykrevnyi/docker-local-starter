@@ -11,3 +11,5 @@ services:
       - /home/app/some-useless-startup/node_modules
     ports:
       - 8000
+    environment:
+      - PORT=8000
